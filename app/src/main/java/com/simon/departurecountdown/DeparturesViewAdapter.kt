@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class DeparturesViewAdapter(private val data: List<Departure>) : RecyclerView.Adapter<DeparturesViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_article, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_departure, parent, false)
         return ViewHolder(view)
     }
 
