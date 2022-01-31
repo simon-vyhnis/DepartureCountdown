@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_nav">
+    android:id="@+id/main_nav"
+    app:startDestination="@id/fragmentStart">
 
+    <fragment
+        android:id="@+id/fragmentStart"
+        android:name="com.simon.departurecountdown.FragmentStart"
+        android:label="FragmentStart" >
+        <action
+            android:id="@+id/action_fragmentStart_to_fragmentDepartures"
+            app:destination="@id/fragmentDepartures" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDepartures"
+        android:name="com.simon.departurecountdown.FragmentDepartures"
+        android:label="FragmentDepartures" />
 </navigation>
