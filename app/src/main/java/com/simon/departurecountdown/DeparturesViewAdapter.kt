@@ -1,11 +1,9 @@
 package com.simon.departurecountdown
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 class DeparturesViewAdapter(private val data: List<Departure>) : RecyclerView.Adapter<DeparturesViewAdapter.ViewHolder>() {
@@ -17,6 +15,10 @@ class DeparturesViewAdapter(private val data: List<Departure>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data[position]
+
+        holder.itemView.findViewById<TextView>(R.id.name).text = item.route.name
+        holder.itemView.findViewById<TextView>(R.id.direction).text = item.trip.headsign
+        holder.itemView.findViewById<TextView>(R.id.time).text = item.departureTime.regularTime
     }
 
     override fun getItemCount(): Int {

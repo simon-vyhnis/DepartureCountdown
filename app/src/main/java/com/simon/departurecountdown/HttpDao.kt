@@ -15,12 +15,12 @@ object HttpDao {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        private val departures = MutableLiveData<List<Departure>>()
-        fun getDepartures(stopName : String): LiveData<List<Departure>> {
+        private val departures = MutableLiveData<DeparturesResponse>()
+        fun getDepartures(stopName : String): LiveData<DeparturesResponse> {
             val api = retrofit.create(GolemioApi::class.java)
             val call = api.getStopDepartures(stopName, 120, BuildConfig.api_key)
-            call.enqueue(object :Callback<List<Departure>>{
-                override fun onResponse(call: Call<List<Departure>>, response: Response<List<Departure>>
+            call.enqueue(object :Callback<DeparturesResponse>{
+                override fun onResponse(call: Call<DeparturesResponse>, response: Response<DeparturesResponse>
                 ) {
                     if(response.isSuccessful) {
                         departures.postValue(response.body())
@@ -29,7 +29,7 @@ object HttpDao {
                     }
                 }
 
-                override fun onFailure(call: Call<List<Departure>>, t: Throwable) {
+                override fun onFailure(call: Call<DeparturesResponse>, t: Throwable) {
                     t.printStackTrace()
                 }
 
