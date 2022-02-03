@@ -15,5 +15,16 @@
     <fragment
         android:id="@+id/fragmentDepartures"
         android:name="com.simon.departurecountdown.FragmentDepartures"
-        android:label="FragmentDepartures" />
+        android:label="FragmentDepartures" >
+        <action
+            android:id="@+id/action_fragmentDepartures_to_countdownFragment"
+            app:destination="@id/nav_countdown" />
+    </fragment>
+    <navigation android:id="@+id/nav_countdown"
+        app:startDestination="@id/countdownFragment">
+        <fragment
+            android:id="@+id/countdownFragment"
+            android:name="com.simon.departurecountdown.CountdownFragment"
+            android:label="CountdownFragment" />
+    </navigation>
 </navigation>

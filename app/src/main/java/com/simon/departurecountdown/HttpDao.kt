@@ -3,6 +3,8 @@ package com.simon.departurecountdown
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.runBlocking
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,5 +38,15 @@ object HttpDao {
             })
             return departures
         }
+
+    fun getDeparturesSynchronous(stopName: String) : DeparturesResponse? {
+        val api = retrofit.create(GolemioApi::class.java)
+        val call = api.getStopDepartures(stopName, 120, BuildConfig.api_key)
+        val res = call.execute()
+        if(!res.isSuccessful){
+            Log.e("HTTP", res.errorBody().toString())
+        }
+        return res.body()
+    }
 
 }

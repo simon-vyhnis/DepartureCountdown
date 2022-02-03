@@ -28,7 +28,7 @@ class FragmentDepartures : Fragment() {
         val viewModel = ViewModelProvider(requireActivity()).get(DeparturesViewModel::class.java)
         viewModel.getDepartures()?.observe(viewLifecycleOwner) {
             recyclerView.layoutManager = LinearLayoutManager(context)
-            recyclerView.adapter = DeparturesViewAdapter(it.departures)
+            recyclerView.adapter = DeparturesViewAdapter(it.departures, viewModel)
         }
     }
 }

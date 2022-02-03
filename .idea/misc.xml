@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/simon/AndroidStudioProjects/DepartureCountdown/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/simon/AndroidStudioProjects/DepartureCountdown/app/src/main/res/layout/fragment_countdown.xml" value="0.358695652173913" />
         <entry key="..\:/Users/simon/AndroidStudioProjects/DepartureCountdown/app/src/main/res/layout/fragment_departures.xml" value="0.358695652173913" />
         <entry key="..\:/Users/simon/AndroidStudioProjects/DepartureCountdown/app/src/main/res/layout/fragment_start.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/simon/AndroidStudioProjects/DepartureCountdown/app/src/main/res/layout/item_departure.xml" value="1.25" />
+        <entry key="..\:/Users/simon/AndroidStudioProjects/DepartureCountdown/app/src/main/res/layout/item_departure.xml" value="0.2534992223950233" />
       </map>
     </option>
   </component>

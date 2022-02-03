@@ -22,7 +22,7 @@ class FragmentStart : Fragment() {
         view.findViewById<Button>(R.id.button).setOnClickListener {
 
             if(input.text.toString().isNotEmpty()){
-                ViewModelProvider(requireActivity()).get(DeparturesViewModel::class.java).currentStop  = input.text.toString()
+                ViewModelProvider(requireActivity()).get(DeparturesViewModel::class.java).currentStop = input.text.toString()
                 it.findNavController().navigate(R.id.action_fragmentStart_to_fragmentDepartures)
             }
         }
